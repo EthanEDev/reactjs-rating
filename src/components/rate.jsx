@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import "./rate.css";
 import Star from "./star";
 
-export default function Rate({ title = "", defaultValue = 0, maxValue = 5 }) {
+export default function Rate({ title = "", defaultRate = 0, maxRate = 5 }) {
   // Create an array representing the star positions
   const array = [];
-  for (let i = 1; i <= maxValue; i++) {
+  for (let i = 1; i <= maxRate; i++) {
     array.push(i);
   }
 
-  const [valueRate, setValueRate] = useState(defaultValue);  // State to keep track of the selected rating
+  const [valueRate, setValueRate] = useState(defaultRate);  // State to keep track of the selected rating
   const [valueHover, setValueHover] = useState(0);  // State to track the rating being hovered over
 
   return (
@@ -37,7 +37,7 @@ export default function Rate({ title = "", defaultValue = 0, maxValue = 5 }) {
             ))}
           </div>
           <div className="score">
-            <span>{valueRate}</span>/{maxValue}  {/* Display the current rating and maximum rating */}
+            <span>{valueRate}</span>/{maxRate}  {/* Display the current rating and maximum rating */}
           </div>
         </div>
       </div>

@@ -4,12 +4,12 @@ import Rate from "./components/rate";
 export default function App() {
   return (
     <>
-      <Rate title="Score" maxValue={5} />
-      <Rate title="Rating" maxValue={5} />
-      <Rate title="Performance" maxValue={5} defaultValue={2} />
-      <Rate title="Score" maxValue={10} />
-      <Rate title="Rating" maxValue={10} />
-      <Rate title="Performance" maxValue={10} defaultValue={8} />
+      <Rate title="Score" maxRate={5} />
+      <Rate title="Rating" maxRate={5} />
+      <Rate title="Performance" maxRate={5} defaultRate={2} />
+      <Rate title="Score" maxRate={10} />
+      <Rate title="Rating" maxRate={10} />
+      <Rate title="Performance" maxRate={10} defaultRate={8} />
     </>
   );
 }
