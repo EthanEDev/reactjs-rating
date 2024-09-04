@@ -1,6 +1,7 @@
 import React from "react";
 import "./star.css";
 
+// SVG icon for the star, stored as a string
 const starIcon = `<svg fill="#ffffff" viewBox="-10 0 510.784 488.784" xml:space="preserve">
 <g>
 	<path d="M478.63,219.042l-98.2,80.2c-5.9,4.8-8.5,12.6-6.7,20l29.7,121.3c4.4,19.7-10.6,36-27.4,36c-5,0-10.3-1.5-15.2-4.7
@@ -12,18 +13,20 @@ const starIcon = `<svg fill="#ffffff" viewBox="-10 0 510.784 488.784" xml:space=
 </svg>`;
 
 export default function Star({ state, onClick, onMouseEnter, onMouseLeave }) {
+  // Determine the class names based on the star's state
   const classes =
     "star " +
-    (state == 1 ? "starHover" : "") +
-    (state == 2 ? "starSelected" : "");
+    (state == 1 ? "starHover" : "") +  // Apply hover class if state is 1
+    (state == 2 ? "starSelected" : "");  // Apply selected class if state is 2
+
   return (
     <>
       <div
-        onClick={onClick}
-        onMouseEnter={onMouseEnter}
-        onMouseLeave={onMouseLeave}
-        className={classes}
-        dangerouslySetInnerHTML={{ __html: starIcon }}
+        onClick={onClick}  // Handle click events
+        onMouseEnter={onMouseEnter}  // Handle mouse enter events
+        onMouseLeave={onMouseLeave}  // Handle mouse leave events
+        className={classes}  // Apply computed class names
+        dangerouslySetInnerHTML={{ __html: starIcon }}  // Render the star icon
       />
     </>
   );

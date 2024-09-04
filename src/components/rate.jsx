@@ -3,18 +3,19 @@ import "./rate.css";
 import Star from "./star";
 
 export default function Rate({ title = "", defaultValue = 0, maxValue = 5 }) {
+  // Create an array representing the star positions
   const array = [];
   for (let i = 1; i <= maxValue; i++) {
     array.push(i);
   }
 
-  const [valueRate, setValueRate] = useState(defaultValue);
-  const [valueHover, setValueHover] = useState(0);
+  const [valueRate, setValueRate] = useState(defaultValue);  // State to keep track of the selected rating
+  const [valueHover, setValueHover] = useState(0);  // State to track the rating being hovered over
 
   return (
     <>
       <div className="container">
-        <div className="title">{title}</div>
+        <div className="title">{title}</div>  {/* Display the title of the rating component */}
         <div className="rate">
           <div className="stars">
             {array.map((item, index) => (
@@ -22,21 +23,21 @@ export default function Rate({ title = "", defaultValue = 0, maxValue = 5 }) {
                 state={
                   valueHover !== 0
                     ? valueHover >= item
-                      ? 1
-                      : 0
+                      ? 1  // Star is hovered over
+                      : 0  // Star is not hovered over
                     : valueRate >= item
-                    ? 2
-                    : 0
+                    ? 2  // Star is selected
+                    : 0  // Star is neither hovered nor selected
                 }
-                key={index}
-                onClick={() => setValueRate(item)}
-                onMouseEnter={() => setValueHover(item)}
-                onMouseLeave={() => setValueHover(0)}
+                key={index}  // Unique key for each star
+                onClick={() => setValueRate(item)}  // Set the rating on click
+                onMouseEnter={() => setValueHover(item)}  // Highlight stars on hover
+                onMouseLeave={() => setValueHover(0)}  // Remove highlight when not hovering
               />
             ))}
           </div>
           <div className="score">
-            <span>{valueRate}</span>/{maxValue}
+            <span>{valueRate}</span>/{maxValue}  {/* Display the current rating and maximum rating */}
           </div>
         </div>
       </div>
