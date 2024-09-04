@@ -1,0 +1,29 @@
+.container {
+    background-color: whitesmoke;
+    width: fit-content;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    border: solid 1px Gainsboro;
+}
+.title {
+  font-family: Arial;
+  font-size: 2rem;
+  padding: 5px;
+}
+.stars {
+  display: flex;
+  cursor: pointer;
+}
+.rate {
+  display: flex;
+  align-items: baseline;
+}
+.score {
+  font-family: Arial;
+  font-size: 1.5rem;
+  margin-left: 10px;
+}
+.score > span {
+  font-size: 2.5rem;
+}

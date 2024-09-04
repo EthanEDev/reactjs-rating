@@ -1,0 +1,12 @@
+.star {
+    width: 50px;
+    stroke: lightsalmon;
+    stroke-width: 20px;
+    padding: 5px;
+}
+.starSelected svg {
+    fill: gold;
+}
+.starHover svg {
+    fill: rgb(164, 140, 0);
+}
