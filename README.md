@@ -1,4 +1,4 @@
-# ReactJS Component: Rating
+# ReactJS Rating Component
 
 A customizable rating component built with React.js that allows users to select a rating based on a dynamic number of stars. This component is highly flexible, enabling various configurations through props.
 
